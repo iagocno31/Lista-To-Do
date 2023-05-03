@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListaSimples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!--DATA E HORA EM TEMPO REAL--> 
+<p>A Data e Hora atual é: <br> <span id="data-hora"></span></p><br>
+<script>
+    function atualizarData() {
+        let dataAtual = new Date();
+        let dia = dataAtual.getDate();
+        let mes = dataAtual.getMonth() + 1;
+        let ano = dataAtual.getFullYear();
+        let horas = dataAtual.getHours();
+        let minutos = dataAtual.getMinutes();
+        let segundos = dataAtual.getSeconds();
+        let dataHora = `Data: ${dia}/0${mes}/${ano} | Hora: ${horas}h${minutos}min${segundos}s`;
+        document.getElementById("data-hora").innerHTML = dataHora;
+    }
+    setInterval(atualizarData, 1000);
+    </script>
+    <h1>Minha Lista de Compras</h1>
+    <div class="container">
+      <form>
+        <input type="text" id="item-input" placeholder="Adicione um item...">
+        <button type="submit" id="add-btn">Add</button>
+      </form>
+      <ul id="item-list"></ul>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
